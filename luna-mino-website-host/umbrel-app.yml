@@ -6,22 +6,36 @@ version: "1.0.0"
 tagline: Apache PHP Website Hosting
 icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/apache.png
 description: >
-  Ein einfacher Apache PHP 8.2 Webserver zum Hosten deiner eigenen Websites.
+  A simple Apache PHP 8.2 web server for hosting your own websites.
   
   
   Features:
   
   
-  - PHP 8.2 mit Apache
+  - PHP 8.2 with Apache
   
-  - Einfache Datei-Verwaltung über Volume-Mount
+  - Easy file management through the data folder
   
-  - Perfekt für statische Websites und PHP-Anwendungen
+  - Perfect for static websites and PHP applications
   
-  - Automatischer Neustart bei Fehlern
+  - Automatic restart on failure
+  
+  - Persistent data storage
   
   
-  Deine Webdateien werden im App-Datenverzeichnis gespeichert und sind über Port 12000 erreichbar.
+  How to use:
+  
+  
+  1. After installation, navigate to the app's data directory
+  
+  2. Place your website files in the 'data' folder
+  
+  3. The index.html or index.php file will be your homepage
+  
+  4. Access your website through the Umbrel dashboard
+  
+  
+  Your web files are stored in the app data directory and accessible through the configured port.
 developer: Luna
 website: https://www.php.net
 dependencies: []
@@ -34,13 +48,15 @@ gallery:
 path: ""
 defaultPassword: ""
 releaseNotes: >
-  Version 1.0.0 - Erste Version
+  Version 1.0.0 - Initial Release
   
   
-  - PHP 8.2 mit Apache
+  - PHP 8.2 with Apache web server
   
-  - Einfaches Website-Hosting
+  - Simple website hosting solution
   
-  - Persistente Datenspeicherung
+  - Persistent data storage
+  
+  - Pre-configured data folder with example files
 submitter: Luna
 submission: ''

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Website Host</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .emoji {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        p {
+            color: #666;
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .info {
+            background: #f7f7f7;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: left;
+        }
+        .info h2 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+        .info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .info li {
+            color: #555;
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .info li:last-child {
+            border-bottom: none;
+        }
+        .info li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #e83e8c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="emoji">🚀</div>
+        <h1>Website Host is Running!</h1>
+        <p>Your Apache PHP 8.2 web server is successfully running.</p>
+        <p>Replace this file with your own website files.</p>
+        
+        <div class="info">
+            <h2>Getting Started</h2>
+            <ul>
+                <li>Upload your HTML, CSS, and JavaScript files to this directory</li>
+                <li>PHP 8.2 files are fully supported</li>
+                <li>Your files are stored persistently</li>
+                <li>Access your site through the Umbrel dashboard</li>
+            </ul>
+        </div>
+        
+        <div class="info" style="margin-top: 20px;">
+            <h2>File Location</h2>
+            <p style="font-size: 0.9em; color: #666;">
+                Place your website files in the <code>data</code> folder of the Website Host app directory.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
