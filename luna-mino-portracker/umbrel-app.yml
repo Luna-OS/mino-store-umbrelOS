@@ -23,4 +23,4 @@ defaultPassword: ""
 releaseNotes: >
   A self-hosted, real-time port monitoring and discovery tool with automatic port discovery, Docker and TrueNAS collectors, and modern UI. Software made by Mostafa Wahied.
 submitter: Luna
-submission:
+submission: ''

@@ -24,4 +24,4 @@ defaultPassword: ""
 releaseNotes: >
   Docker Port Dashboard for Easy Container Access. Features include port mapping overview for running containers, instant click-to-access URLs for web apps, multi-host Docker management, zero configuration setup, and built-in image update checking.
 submitter: Luna
-submission:
+submission: ''

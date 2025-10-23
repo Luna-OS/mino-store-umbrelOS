@@ -20,4 +20,4 @@ defaultPassword: ""
 releaseNotes: >
   A tunneling daemon by Cloudflare that safely exposes your localhost into the web.
 submitter: Luna
-submission:
+submission: ''
