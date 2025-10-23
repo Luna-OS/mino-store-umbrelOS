@@ -1,30 +1,34 @@
-version: '3'
+version: "3.7"
+
 services:
-  tianji:
-    image: moonrailgun/tianji
-    ports:
-      - "20110:12345"
+  app_proxy:
     environment:
-      DATABASE_URL: postgresql://tianji:tianji@postgres:5432/tianji
-      JWT_SECRET: DSFGdhbg445gFDSGDF
-      ALLOW_REGISTER: "false"
-      ALLOW_OPENAPI: "true"
+      APP_HOST: luna-mino-tianji_server_1
+      APP_PORT: 12345
+      PROXY_AUTH_ADD: "false"
+
+  server:
+    image: moonrailgun/tianji:latest
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=postgresql://tianji:tianji@postgres:5432/tianji
+      - JWT_SECRET=${APP_PASSWORD}
+      - ALLOW_REGISTER=false
+      - ALLOW_OPENAPI=true
     depends_on:
       - postgres
-    restart: always
+
   postgres:
     image: postgres:15.4-alpine
+    restart: unless-stopped
     environment:
-      POSTGRES_DB: tianji
-      POSTGRES_USER: tianji
-      POSTGRES_PASSWORD: tianji
+      - POSTGRES_DB=tianji
+      - POSTGRES_USER=tianji
+      - POSTGRES_PASSWORD=tianji
     volumes:
-      - /Container/tianji/DB:/var/lib/postgresql/data
-    restart: always
+      - ${APP_DATA_DIR}/data/db:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
       interval: 5s
       timeout: 5s
       retries: 5
-volumes:
-  tianji-db-data:

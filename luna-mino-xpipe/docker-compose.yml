@@ -1,21 +1,24 @@
+version: "3.7"
+
 services:
-  webtop:
+  app_proxy:
+    environment:
+      APP_HOST: luna-mino-xpipe_server_1
+      APP_PORT: 6077
+      PROXY_AUTH_ADD: "false"
+
+  server:
     image: ghcr.io/xpipe-io/xpipe-webtop:latest
-    container_name: xpipe-webtop
+    restart: unless-stopped
     environment:
       - CUSTOM_USER=admin
-      - PASSWORD=Password
+      - PASSWORD=${APP_PASSWORD}
       - CUSTOM_PORT=6077
       - CUSTOM_HTTPS_PORT=6078
-      - TITLE="XPIPE Terminal"
+      - TITLE=XPIPE Terminal
       - START_DOCKER=true
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock #optional
-      - config_data:/config  # Hier wird das neue Volume hinzugefügt
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${APP_DATA_DIR}/data:/config
     ports:
-      - 6077:6077
-      - 6078:6078
-    restart: unless-stopped
-
-volumes:
-  config_data:  # Hier wird das benannte Volume deklariert.
+      - "6078:6078"

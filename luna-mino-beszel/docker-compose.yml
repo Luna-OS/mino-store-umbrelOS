@@ -1,9 +1,14 @@
+version: "3.7"
+
 services:
-  beszel:
-    image: 'henrygd/beszel'
-    container_name: 'beszel'
+  app_proxy:
+    environment:
+      APP_HOST: luna-mino-beszel_server_1
+      APP_PORT: 8090
+      PROXY_AUTH_ADD: "false"
+
+  server:
+    image: henrygd/beszel:latest
     restart: unless-stopped
-    ports:
-      - '20115:8090'
     volumes:
-      - ./beszel_data:/beszel_data
+      - ${APP_DATA_DIR}/data:/beszel_data

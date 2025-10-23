@@ -1,9 +1,14 @@
+version: "3.7"
+
 services:
-  retroassembly:
+  app_proxy:
+    environment:
+      APP_HOST: luna-mino-retroassembly_server_1
+      APP_PORT: 8000
+      PROXY_AUTH_ADD: "false"
+
+  server:
     image: arianrhodsandlot/retroassembly:latest
-    container_name: retroassembly
-    ports: 
-    - 8171:8000
-    volumes: 
-    - ${APP_DATA_DIR}/data:/app/data
     restart: unless-stopped
+    volumes:
+      - ${APP_DATA_DIR}/data:/app/data

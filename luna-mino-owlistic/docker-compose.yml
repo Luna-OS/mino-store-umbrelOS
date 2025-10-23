@@ -1,26 +1,42 @@
-version: '3.8'
+version: "3.7"
 
 services:
+  app_proxy:
+    environment:
+      APP_HOST: luna-mino-owlistic_server_1
+      APP_PORT: 3000
+      PROXY_AUTH_ADD: "false"
+
+  server:
+    image: ghcr.io/owlistic-notes/owlistic:latest
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=postgresql://admin:admin@postgres:5432/owlistic
+      - NATS_URL=nats://nats:4222
+    depends_on:
+      - postgres
+      - nats
+    volumes:
+      - ${APP_DATA_DIR}/data:/app/data
+
   postgres:
     image: postgres:15
+    restart: unless-stopped
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
-    ports:
-      - "5432:5432"
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=owlistic
     volumes:
       - ${APP_DATA_DIR}/db:/var/lib/postgresql/data
 
   nats:
-    image: nats
+    image: nats:latest
+    restart: unless-stopped
     command:
       - --http_port
       - "8222"
       - -js
       - -sd
       - /var/lib/nats/data
-    ports:
-     - "4222:4222"
-     - "8222:8222"
     volumes:
-      - ${APP_DATA_DIR}/data:/var/lib/nats/data
+      - ${APP_DATA_DIR}/nats:/var/lib/nats/data

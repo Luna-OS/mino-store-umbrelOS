@@ -1,8 +1,12 @@
-version: "3.8"
+version: "3.7"
+
 services:
-  mini-qr:
+  app_proxy:
+    environment:
+      APP_HOST: luna-mino-miniqr_server_1
+      APP_PORT: 8080
+      PROXY_AUTH_ADD: "false"
+
+  server:
     image: ghcr.io/lyqht/mini-qr:latest
-    container_name: mini-qr
-    ports:
-      - 10100:8080
     restart: unless-stopped

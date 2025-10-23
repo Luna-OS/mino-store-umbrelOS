@@ -1,16 +1,22 @@
 version: "3.7"
 
 services:
+  app_proxy:
+    environment:
+      APP_HOST: luna-mino-scrypted_server_1
+      APP_PORT: 10443
+      PROXY_AUTH_ADD: "false"
+
   server:
     image: koush/scrypted:v0.142.6-noble-full
+    restart: unless-stopped
     environment:
       - SCRYPTED_WEBHOOK_UPDATE_AUTHORIZATION=Bearer 43282fb9-27e4-4d93-b3c5-6c333ae4671f
       - SCRYPTED_WEBHOOK_UPDATE=http://localhost:10444/v1/update
-    restart: unless-stopped
-    network_mode: host
-    # Available at port 10443
+    ports:
+      - "10444:10444"
     volumes:
-      - ${APP_DATA_DIR}/data/scrypted:/server/volume
+      - ${APP_DATA_DIR}/data:/server/volume
     logging:
       driver: "json-file"
       options:
@@ -19,25 +25,18 @@ services:
     labels:
       - "com.centurylinklabs.watchtower.scope=scrypted"
 
-  # watchtower manages updates for Scrypted.
   watchtower:
+    image: containrrr/watchtower
+    restart: unless-stopped
     environment:
       - WATCHTOWER_HTTP_API_TOKEN=SET_THIS_TO_SOME_RANDOM_TEXT
       - WATCHTOWER_HTTP_API_UPDATE=true
       - WATCHTOWER_SCOPE=scrypted
-      # remove the following line to never allow docker to auto update.
-      # this is not recommended.
       - WATCHTOWER_HTTP_API_PERIODIC_POLLS=true
-    image: containrrr/watchtower
-    container_name: scrypted-watchtower
-    restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     labels:
       - "com.centurylinklabs.watchtower.scope=scrypted"
     ports:
-      # The auto update port 10444 can be configured
-      # Must match the port in the auto update url above.
-      - 10444:8080
-    # check for updates once an hour (interval is in seconds)
+      - "10444:8080"
     command: --interval 3600 --cleanup --scope scrypted

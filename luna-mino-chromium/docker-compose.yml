@@ -24,9 +24,7 @@ services:
 
     # Mount volumes from the host into the container
     volumes:
-      - /data/chromium/config:/config
-      # Map the host directory /data/chromium/config to the container's /config directory
-      # This allows the container to read/write configuration files to the specified host directory
+      - ${APP_DATA_DIR}/data:/config
 
     # Expose ports from the container to the host machine
     # ports:

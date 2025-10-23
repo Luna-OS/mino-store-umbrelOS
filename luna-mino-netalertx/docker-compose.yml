@@ -1,17 +1,20 @@
-version: "2"
+version: "3.7"
+
 services:
-    netalertx:
-      container_name: NetAlertX
-      hostname: NetAlertX
-      privileged: true
-      # use the below line if you want to test the latest dev image
-      # image: "jokobsk/netalertx-dev:latest" 
-      image: jokobsk/netalertx:latest
-      environment:
-        - TZ=Europe/Berlin
-        - port=20211
-      restart: always
-      volumes:
-        - /netxdb:/app/db
-        - /netxconfig:/app/config
-      network_mode: host
+  app_proxy:
+    environment:
+      APP_HOST: luna-mino-netalertx_server_1
+      APP_PORT: 20211
+      PROXY_AUTH_ADD: "false"
+
+  server:
+    image: jokobsk/netalertx:latest
+    hostname: NetAlertX
+    privileged: true
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Berlin
+      - PORT=20211
+    volumes:
+      - ${APP_DATA_DIR}/data/db:/app/db
+      - ${APP_DATA_DIR}/data/config:/app/config

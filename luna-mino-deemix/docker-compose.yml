@@ -1,14 +1,19 @@
-version: "3"
+version: "3.7"
+
 services:
-  deemix:
+  app_proxy:
+    environment:
+      APP_HOST: luna-mino-deemix_server_1
+      APP_PORT: 6595
+      PROXY_AUTH_ADD: "false"
+
+  server:
     image: dim145/deemix-server:2024-12-11
     restart: unless-stopped
     environment:
-     DEEMIX_SINGLE_USER: true # default: true
-     DEEMIX_LOCATION_BASE: /  # default: /
-     DEEMIX_PORT: 6595        # default: 6595
-    ports:
-      - "6595:6595" # Deemix web UI
+      - DEEMIX_SINGLE_USER=true
+      - DEEMIX_LOCATION_BASE=/
+      - DEEMIX_PORT=6595
     volumes:
       - ${APP_DATA_DIR}/config:/deemix/config
       - ${APP_DATA_DIR}/downloads:/downloads

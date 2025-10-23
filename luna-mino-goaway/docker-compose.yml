@@ -1,12 +1,19 @@
+version: "3.7"
+
 services:
-    goaway:
-        image: 'pommee/goaway:latest'
-        ports:
-            - '7417:8080'
-            - '53:53/tcp'
-            - '53:53/udp'
-        container_name: goaway
-        cap_add:
-            - NET_BIND_SERVICE
-            - NET_RAW    
+  app_proxy:
+    environment:
+      APP_HOST: luna-mino-goaway_server_1
+      APP_PORT: 8080
+      PROXY_AUTH_ADD: "false"
+
+  server:
+    image: pommee/goaway:latest
+    restart: unless-stopped
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    cap_add:
+      - NET_BIND_SERVICE
+      - NET_RAW    
     

@@ -1,5 +1,12 @@
+version: "3.7"
+
 services:
-    moocup:
-        image: 'jellydeck/moocup:latest'
-        ports:
-            - '7191:80'
+  app_proxy:
+    environment:
+      APP_HOST: luna-mino-moocup_server_1
+      APP_PORT: 80
+      PROXY_AUTH_ADD: "false"
+
+  server:
+    image: jellydeck/moocup:latest
+    restart: unless-stopped
