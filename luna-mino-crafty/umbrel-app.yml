@@ -1,33 +1,70 @@
 manifestVersion: 1
 id: luna-mino-crafty
 name: Crafty
-tagline: 
+tagline: Minecraft server management made easy
 icon: https://gitlab.com/uploads/-/system/project/avatar/20430749/Crafty_4-0_Logo_square.ico
 category: Hosting
-version: "1.0.5"
-port: 8543
+version: "1.0.6"
+port: 8443
 description: >-
-  Install Crafty-Controller on Umbrel
-  Crafty Controller is a free and open-source Minecraft launcher and manager that allows users to start and administer Minecraft servers from a user-friendly interface. The interface is run as a self-hosted web server that is accessible to devices on the local network by default and can be port forwarded to provide external access outside of your local network. Crafty is designed to be easy to install and use, requiring only a bit of technical knowledge and a desire to learn to get started. Crafty Controller is still actively being developed by Arcadia Technology and we are continually making major improvements to the software.
+  Crafty Controller is a free and open-source Minecraft launcher and manager that allows users to start and administer Minecraft servers from a user-friendly interface.
 
-  Once you reach the Crafty webpage you will be greeted with a login screen. The default credentials can be set in default.json before the first run:
 
-  - Go in the Settings > Advanced settings > Terminal > Apps
-  - use this Command "vi app/config/default-creds.txt"
-    We highly recommend changing this immediately after logging in.
+  The interface runs as a self-hosted web server that is accessible to devices on your local network by default and can be port forwarded to provide external access. Crafty is designed to be easy to install and use, requiring only basic technical knowledge to get started.
+
+
+  Features:
+
+
+  - Create and manage multiple Minecraft servers
+
+  - Web-based control panel
+
+  - Server scheduling and automation
+
+  - Backup and restore functionality
+
+  - Live console access
+
+  - Player management
+
+  - Mod and plugin support
+
+
+  Default Credentials:
+
+
+  Check the app logs on first startup to find your default admin credentials. You can view the credentials file by accessing the app's data directory at: data/config/default-creds.txt
+
+
+  We highly recommend changing the default password immediately after your first login!
 
 developer: Arcadia Technology
 website: https://craftycontrol.com/
 submitter: Luna
-submission:
-repo:
-support: 
+submission: ''
+repo: https://gitlab.com/crafty-controller/crafty-4
+support: https://discord.gg/9VJPhCE 
 gallery:
   - https://wiki.craftycontrol.com/uploads/en/crafty%204%20login.png
   - https://wiki.craftycontrol.com/uploads/en/crafty%204%20dashboard.png
   - https://i.ytimg.com/vi/56zwZmj_ZYo/maxresdefault.jpg
 releaseNotes: >
-  
+  Version 1.0.6 - Fixed port configuration
+
+
+  - Fixed connection issues (ECONNRESET error)
+
+  - Corrected port mapping to use Crafty's HTTPS port (8443)
+
+  - Added HTTP port (8000) and Dynmap port (8123) support
+
+  - Improved description with feature list
+
+  - Default credentials now clearly explained
+
+
+  Crafty Controller is actively developed by Arcadia Technology with continuous improvements.
 dependencies: []
 path: ""
 defaultUsername: "admin"

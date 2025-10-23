@@ -13,7 +13,8 @@ services:
     environment:
       - TZ=Europe/Berlin
     ports:
-      - "8523:8123"
+      - "8000:8000"
+      - "8123:8123"
       - "19132:19132/udp"
       - "25500-25600:25500-25600"
     volumes:
