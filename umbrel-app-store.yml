@@ -1,1 +1,47 @@
-
+id: "luna-mino-store"
+name: "Luna's Mino Store"
+tagline: "A collection of useful applications for umbrelOS"
+icon: ""
+developer: "Luna"
+website: "https://github.com/Luna/mino-store-umbrelOS"
+support: "https://github.com/Luna/mino-store-umbrelOS/issues"
+apps:
+  - luna-mino-adguard-home
+  - luna-mino-beszel
+  - luna-mino-bookstack
+  - luna-mino-btop
+  - luna-mino-checkcle
+  - luna-mino-chromium
+  - luna-mino-cloudflared
+  - luna-mino-crafty
+  - luna-mino-dashdot
+  - luna-mino-deemix
+  - luna-mino-dockpeek
+  - luna-mino-erugo
+  - luna-mino-excalidraw
+  - luna-mino-factorio
+  - luna-mino-flame
+  - luna-mino-ghost
+  - luna-mino-glances
+  - luna-mino-goaway
+  - luna-mino-guacamole
+  - luna-mino-homepage
+  - luna-mino-miniqr
+  - luna-mino-moocup
+  - luna-mino-netalertx
+  - luna-mino-omni-tools
+  - luna-mino-owlistic
+  - luna-mino-portainer
+  - luna-mino-portracker
+  - luna-mino-pwndrop
+  - luna-mino-retroassembly
+  - luna-mino-scrypted
+  - luna-mino-searxng
+  - luna-mino-speedtest-tracker
+  - luna-mino-speedtest-tracker-2
+  - luna-mino-teamspeak-3
+  - luna-mino-tianji
+  - luna-mino-uptime-kuma
+  - luna-mino-website-host
+  - luna-mino-wishlist
+  - luna-mino-xpipe
