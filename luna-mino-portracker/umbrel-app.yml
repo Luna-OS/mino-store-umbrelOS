@@ -1,0 +1,26 @@
+manifestVersion: 1
+id: luna-mino-portracker
+name: ProTracker
+category: Network
+version: "1.1"
+tagline: Self-hosted port monitoring and discovery tool
+icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/portracker.png
+description: >
+  A self-hosted, real-time port monitoring and discovery tool. Features automatic port discovery across systems, platform-specific collectors for Docker and TrueNAS, peer-to-peer monitoring, and a modern responsive UI with light/dark modes.
+developer: Luna
+website: https://github.com/Luna/big-bear-docker-images
+dependencies: []
+repo: https://github.com/Mostafa-Wahied/portracker
+support: https://github.com/Mostafa-Wahied/portracker/issues
+port: 4999
+gallery:
+  - https://cdn.jsdelivr.net/gh/Luna/big-bear-umbrel/luna-mino-portracker/screenshot-1.png
+  - https://cdn.jsdelivr.net/gh/Luna/big-bear-umbrel/luna-mino-portracker/screenshot-2.png
+  - https://cdn.jsdelivr.net/gh/Luna/big-bear-umbrel/luna-mino-portracker/screenshot-3.png
+  - https://cdn.jsdelivr.net/gh/Luna/big-bear-umbrel/luna-mino-portracker/screenshot-4.png
+path: ""
+defaultPassword: ""
+releaseNotes: >
+  A self-hosted, real-time port monitoring and discovery tool with automatic port discovery, Docker and TrueNAS collectors, and modern UI. Software made by Mostafa Wahied.
+submitter: Luna
+submission:

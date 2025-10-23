@@ -1,0 +1,47 @@
+manifestVersion: 1
+id: luna-mino-website-host
+name: Website Host
+category: Developer Tools
+version: "1.0.0"
+tagline: Apache PHP Website Hosting
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/apache.png
+description: >
+  Ein einfacher Apache PHP 8.2 Webserver zum Hosten deiner eigenen Websites.
+  
+  
+  Features:
+  
+  
+  - PHP 8.2 mit Apache
+  
+  - Einfache Datei-Verwaltung über Volume-Mount
+  
+  - Perfekt für statische Websites und PHP-Anwendungen
+  
+  - Automatischer Neustart bei Fehlern
+  
+  
+  Deine Webdateien werden im App-Datenverzeichnis gespeichert und sind über Port 12000 erreichbar.
+developer: Luna
+website: https://www.php.net
+dependencies: []
+repo: https://hub.docker.com/_/php
+support: https://www.php.net/support.php
+port: 12000
+gallery:
+  - https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/apache.png
+  - https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/php.png
+path: ""
+defaultPassword: ""
+releaseNotes: >
+  Version 1.0.0 - Erste Version
+  
+  
+  - PHP 8.2 mit Apache
+  
+  - Einfaches Website-Hosting
+  
+  - Persistente Datenspeicherung
+submitter: Luna
+submission:
+

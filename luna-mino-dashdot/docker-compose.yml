@@ -1,0 +1,16 @@
+version: "3.5"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: luna-mino-dashdot_server_1
+      APP_PORT: 3001
+
+  server:
+    image: mauricenino/dashdot:6.2.0
+    volumes:
+      - /:/mnt/host:ro
+    environment:
+      DASHDOT_ENABLE_CPU_TEMPS: "true"
+    restart: unless-stopped
+    privileged: true

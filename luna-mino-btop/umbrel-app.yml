@@ -1,0 +1,28 @@
+manifestVersion: 1
+id: luna-mino-btop
+name: btop
+category: System Monitoring
+version: "0.1.4"
+tagline: A monitor of resources
+icon: https://cdn.jsdelivr.net/gh/aristocratos/btop/Img/icon.png
+description: >
+  A monitor of resources. Software made by Aristocratos at https://github.com/aristocratos/btop
+developer: Luna
+website: https://github.com/Luna/big-bear-docker-images
+dependencies: []
+repo: https://github.com/Luna/big-bear-docker-images
+support: https://github.com/Luna/big-bear-docker-images/issues
+port: 7681
+gallery:
+  - https://cdn.jsdelivr.net/gh/Luna/big-bear-umbrel/luna-mino-btop/screenshot-1-v2.png
+  - https://cdn.jsdelivr.net/gh/Luna/big-bear-umbrel/luna-mino-btop/screenshot-2.png
+  - https://cdn.jsdelivr.net/gh/Luna/big-bear-umbrel/luna-mino-btop/screenshot-3.png
+  - https://cdn.jsdelivr.net/gh/Luna/big-bear-umbrel/luna-mino-btop/screenshot-4.png
+  - https://cdn.jsdelivr.net/gh/Luna/big-bear-umbrel/luna-mino-btop/screenshot-5.png
+  - https://cdn.jsdelivr.net/gh/Luna/big-bear-umbrel/luna-mino-btop/screenshot-6.png
+path: ""
+defaultPassword: ""
+releaseNotes: >
+  A monitor of resources. Software made by Aristocratos at https://github.com/aristocratos/btop
+submitter: Luna
+submission:
